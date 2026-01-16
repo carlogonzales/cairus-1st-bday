@@ -1,10 +1,8 @@
 'use client';
 import {useEffect, useMemo, useState} from "react";
 import invitationsData from "@/assets/data/invitations.json";
-import {useSearchParams} from "next/dist/client/components/navigation";
 
 const RsvpPane = () => {
-  const searchParams = useSearchParams();
   const [attending, setAttending] = useState(true);
 
   const [invitationCode, setInvitationCode] = useState("");
@@ -25,6 +23,7 @@ const RsvpPane = () => {
   // On component load, check for code in query params to pre-fill name (if found) in invitations.json
   useEffect(() => {
     const checkCode = async () => {
+      const searchParams = new URLSearchParams(window.location.search);
       const codeParam = searchParams.get("code") || "";
 
       if (codeParam) {
@@ -145,6 +144,7 @@ END:VCALENDAR`;
   async function handleSubmit(e) {
     e.preventDefault();
     // Get code from queryString
+    const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
     const cleanName = fullName.trim();
     const nameForMsg = cleanName || "guest";
