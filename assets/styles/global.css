@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+
+.guest-btn {
+    border-radius: 1rem;
+    border: 1px solid #AB8653;
+    background: #FBF1DC;
+    padding: .65rem .5rem;
+    font-size: .875rem;
+    font-weight: 800;
+    color: #78350F;
+    transition: background-color .15s ease, border-color .15s ease, transform .05s ease;
+    outline: none;
+    min-height: 44px;
+}
+
+.guest-btn:hover {
+    background: #CBA673;
+}
+
+.guest-btn:active {
+    transform: translateY(1px);
+}
+
+.guest-btn.selected {
+    border-color: #AB8653;
+    background: #AB8653;
+    color: white;
+}
+
+.guest-btn:focus {
+    box-shadow: 0 0 0 4px rgba(171, 134, 83, 0.25);
+}
+
+.guest-btn[disabled] {
+    opacity: .45;
+    cursor: not-allowed;
+}

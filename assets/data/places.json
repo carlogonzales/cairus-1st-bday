@@ -1,0 +1,288 @@
+{
+  "places": [
+    {
+      "title": "Hundred Islands National Park",
+      "area": "Alaminos",
+      "tags": [
+        "Island hopping",
+        "Family-friendly"
+      ],
+      "query": "Hundred Islands National Park Alaminos Pangasinan",
+      "note": "Classic Pangasinan trip: boats + islands + viewpoints."
+    },
+    {
+      "title": "Patar Beach",
+      "area": "Bolinao",
+      "tags": [
+        "Beach",
+        "Sunset"
+      ],
+      "query": "Patar Beach Bolinao Pangasinan",
+      "note": "Wide shoreline and great sunset photos."
+    },
+    {
+      "title": "Bolinao Falls",
+      "area": "Bolinao",
+      "tags": [
+        "Nature",
+        "Swim spot"
+      ],
+      "query": "Bolinao Falls Pangasinan",
+      "note": "Refreshing falls—bring extra clothes."
+    },
+    {
+      "title": "Cabongaoan Beach (Death Pool)",
+      "area": "Burgos",
+      "tags": [
+        "Beach",
+        "Scenic"
+      ],
+      "query": "Cabongaoan Beach Death Pool Burgos Pangasinan",
+      "note": "Best at low tide; always be cautious near rock pools."
+    },
+    {
+      "title": "Tondol Beach",
+      "area": "Anda",
+      "tags": [
+        "Beach",
+        "Shallow water"
+      ],
+      "query": "Tondol Beach Anda Pangasinan",
+      "note": "Known as 'Little Boracay of the North' due to fine white sand."
+    },
+    {
+      "title": "Urbiztondo Beach",
+      "area": "San Juan, La Union",
+      "tags": [
+        "Surfing",
+        "Nightlife"
+      ],
+      "query": "Urbiztondo Beach San Juan La Union",
+      "note": " The surfing capital of the north; great food and waves."
+    },
+    {
+      "title": "Minalungao National Park",
+      "area": "General Tinio, Nueva Ecija",
+      "tags": [
+        "Nature",
+        "River"
+      ],
+      "query": "Minalungao National Park Nueva Ecija",
+      "note": "Famous for limestone walls and bamboo rafting."
+    },
+    {
+      "title": "Strawberry Farm",
+      "area": "La Trinidad, Benguet",
+      "tags": [
+        "Agritourism",
+        "Family-friendly"
+      ],
+      "query": "Strawberry Farm La Trinidad Benguet",
+      "note": "Pick your own strawberries; best visited in cooler months."
+    },
+    {
+      "title": "Anawangin Cove",
+      "area": "San Antonio, Zambales",
+      "tags": [
+        "Camping",
+        "Beach"
+      ],
+      "query": "Anawangin Cove Zambales",
+      "note": "Accessible by boat; popular for camping amidst agoho trees."
+    },
+    {
+      "title": "Tangadan Falls",
+      "area": "San Gabriel, La Union",
+      "tags": [
+        "Waterfall",
+        "Adventure"
+      ],
+      "query": "Tangadan Falls San Gabriel La Union",
+      "note": "Requires a trek; features a wide cascade and cliff jumping."
+    }
+  ],
+  "landmarks": [
+    {
+      "title": "Minor Basilica of Our Lady of the Rosary of Manaoag",
+      "area": "Manaoag",
+      "tags": [
+        "Pilgrimage",
+        "Landmark"
+      ],
+      "query": "Minor Basilica of Our Lady of the Rosary of Manaoag Pangasinan",
+      "note": "A well-known church and pilgrimage destination."
+    },
+    {
+      "title": "Cape Bolinao Lighthouse",
+      "area": "Bolinao",
+      "tags": [
+        "Viewpoint",
+        "Landmark"
+      ],
+      "query": "Cape Bolinao Lighthouse Pangasinan",
+      "note": "Iconic lighthouse with coastal views."
+    },
+    {
+      "title": "Enchanted Cave",
+      "area": "Bolinao",
+      "tags": [
+        "Cave pool",
+        "Unique"
+      ],
+      "query": "Enchanted Cave Bolinao Pangasinan",
+      "note": "Short stop with a cave pool—check local guidelines."
+    },
+    {
+      "title": "Lingayen Beach",
+      "area": "Lingayen",
+      "tags": [
+        "Beachwalk",
+        "Relax"
+      ],
+      "query": "Lingayen Beach Pangasinan",
+      "note": "Easy, laid-back coastal stop."
+    },
+    {
+      "title": "Pangasinan Provincial Capitol",
+      "area": "Lingayen",
+      "tags": [
+        "History",
+        "Architecture"
+      ],
+      "query": "Pangasinan Provincial Capitol Lingayen",
+      "note": "Grand neo-classical building and a historical landmark."
+    },
+    {
+      "title": "BenCab Museum",
+      "area": "Tuba, Benguet",
+      "tags": [
+        "Art",
+        "Culture"
+      ],
+      "query": "BenCab Museum Tuba Benguet",
+      "note": "Features works by National Artist Ben Cabrera and tribal art."
+    },
+    {
+      "title": "Monasterio de Tarlac",
+      "area": "San Jose, Tarlac",
+      "tags": [
+        "Religious",
+        "Viewpoint"
+      ],
+      "query": "Monasterio de Tarlac San Jose",
+      "note": "Hilltop monastery housing a relic of the True Cross."
+    },
+    {
+      "title": "Ma-Cho Temple",
+      "area": "San Fernando, La Union",
+      "tags": [
+        "Culture",
+        "Temple"
+      ],
+      "query": "Ma-Cho Temple La Union",
+      "note": "A scenic Taoist temple overlooking the sea."
+    },
+    {
+      "title": "Capas National Shrine",
+      "area": "Capas, Tarlac",
+      "tags": [
+        "History",
+        "Memorial"
+      ],
+      "query": "Capas National Shrine Tarlac",
+      "note": "Memorial dedicated to soldiers of the Bataan Death March."
+    }
+  ],
+  "stays": [
+    {
+      "title": "The Monarch Hotel",
+      "area": "Calasiao",
+      "tags": [
+        "Hotel",
+        "Comfort"
+      ],
+      "query": "The Monarch Hotel Calasiao Pangasinan",
+      "note": "A popular option for comfort stays in the area."
+    },
+    {
+      "title": "Puerto Del Sol Beach Resort",
+      "area": "Bolinao",
+      "tags": [
+        "Beach resort",
+        "Relax"
+      ],
+      "query": "Puerto Del Sol Beach Resort Bolinao Pangasinan",
+      "note": "Beach resort vibes—good for a chill overnight."
+    },
+    {
+      "title": "Dagupan City Hotels",
+      "area": "Dagupan",
+      "tags": [
+        "City base",
+        "Food trip"
+      ],
+      "query": "Hotels in Dagupan Pangasinan",
+      "note": "Convenient base if you want a city + food stop."
+    },
+    {
+      "title": "Alaminos City Hotels",
+      "area": "Alaminos",
+      "tags": [
+        "Near Hundred Islands",
+        "Overnight"
+      ],
+      "query": "Hotels in Alaminos Pangasinan",
+      "note": "Great if you’re doing Hundred Islands early the next day."
+    },
+    {
+      "title": "Thunderbird Resorts - Poro Point",
+      "area": "San Fernando, La Union",
+      "tags": [
+        "Luxury",
+        "Resort"
+      ],
+      "query": "Thunderbird Resorts Poro Point La Union",
+      "note": "Santorini-inspired luxury resort with casino and golf."
+    },
+    {
+      "title": "The Manor at Camp John Hay",
+      "area": "Baguio, Benguet",
+      "tags": [
+        "Mountain lodge",
+        "Luxury"
+      ],
+      "query": "The Manor at Camp John Hay Baguio",
+      "note": "Iconic Baguio hotel surrounded by pine trees."
+    },
+    {
+      "title": "Flotsam & Jetsam Artist Beach Hostel",
+      "area": "San Juan, La Union",
+      "tags": [
+        "Hostel",
+        "Social"
+      ],
+      "query": "Flotsam and Jetsam La Union",
+      "note": "Trendy, social spot popular with surfers and youth."
+    },
+    {
+      "title": "Crystal Beach Resort",
+      "area": "San Narciso, Zambales",
+      "tags": [
+        "Camping",
+        "Surfing"
+      ],
+      "query": "Crystal Beach Resort Zambales",
+      "note": "Famous for agoho trees and beachfront camping options."
+    },
+    {
+      "title": "Birdland Beach Club",
+      "area": "Bolinao",
+      "tags": [
+        "Eco-resort",
+        "Unique"
+      ],
+      "query": "Birdland Beach Club Bolinao Pangasinan",
+      "note": "Eco-boutique resort known for unique structures and views."
+    }
+  ]
+}

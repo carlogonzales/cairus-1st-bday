@@ -1,0 +1,1143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RSVP • Jungle 1st Birthday</title>
+
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <meta name="description"
+          content="RSVP for a Jungle-themed 1st Birthday celebration. Countdown, details, and RSVP form."/>
+</head>
+
+<body class="min-h-screen bg-[#E2CDB5] text-[#78350F]">
+<!-- FULL PAGE BACKGROUND -->
+<div class="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
+    <img src="background.svg" alt="" class="h-full w-full object-cover object-left" />
+</div>
+
+<!-- TREE TOP (decorative, does NOT occupy space) -->
+<div class="pointer-events-none fixed top-0 left-0 -z-10 w-full overflow-hidden">
+    <img
+            src="tree_top.svg"
+            alt=""
+            class="ml-auto w-auto h-auto max-w-none"
+    />
+</div>
+
+<!-- Top bar -->
+<header class="relative mx-auto max-w-5xl px-4 pt-6 sm:px-6">
+    <div class="flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2"></div>
+        <a href="#rsvp"
+           class="hidden rounded-full bg-[#FFCB40] px-4 py-2 text-sm font-semibold text-[#78350F] shadow-sm hover:bg-[#E6B83A] sm:inline-flex">
+            RSVP Now
+        </a>
+    </div>
+    <div class="w-full flex flex-col items-center gap-3 md:flex-row md:justify-center md:gap-6">
+        <!-- Mobile top row: Lion + Mobile Tiger -->
+        <div class="flex items-center justify-center gap-2 md:contents">
+            <!-- Lion -->
+            <div class="md:self-center scale-75 sm:scale-90 md:scale-100 origin-center">
+                <img src="lion.svg" class="object-contain"/>
+            </div>
+            <!-- Mobile-only Tiger -->
+            <div class="md:hidden scale-75 sm:scale-90 md:scale-100 origin-center">
+                <img src="tiger.svg" class="object-contain"/>
+            </div>
+        </div>
+        <!-- Label -->
+        <div class="md:self-center">
+            <img src="cairus_turns_1.svg"/>
+        </div>
+        <!-- Desktop-only Tiger -->
+        <div class="hidden md:block md:self-center">
+            <img src="tiger.svg"/>
+        </div>
+    </div>
+</header>
+
+<main class="mx-auto max-w-5xl mt-6 md:mt-4 px-4 pb-12 pt-6 sm:px-6">
+    <!-- Hero -->
+    <section class="grid gap-6 lg:grid-cols-12 lg:items-stretch">
+        <div class="lg:col-span-7">
+            <div class="flex items-center gap-5 rounded-3xl border-4 border-[#AB8653] bg-[#AB8653] p-8 shadow-sm backdrop-blur">
+                <div class="shrink-0">
+                    <svg width="78" height="81" viewBox="0 0 78 81" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="78" height="81" fill="url(#pattern0_30_2159)"/>
+                        <defs>
+                            <pattern id="pattern0_30_2159" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_30_2159"
+                                     transform="matrix(0.00246305 0 0 0.00237183 0 -0.00401387)"/>
+                            </pattern>
+                            <image id="image0_30_2159" width="406" height="425" preserveAspectRatio="none"
+                                   xlink:href="data:image/png;base64,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"/>
+                        </defs>
+                    </svg>
+                </div>
+                <h1 class="text-4xl sm:text-2xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-[34px]">
+                    Come join our little explorer’s <span class="text-[#FFCB40]">1st Birthday</span>!
+                </h1>
+            </div>
+            <div class="w-full px-6 sm:px-8">
+                <div class="h-6 md:h-12 overflow-hidden">
+                    <img src="connector.svg" class="w-full h-full object-cover object-center block" alt=""/>
+                </div>
+            </div>
+            <div class="rounded-3xl border-4 border-[#AB8653] bg-[#FFFBEB] p-6 shadow-sm backdrop-blur sm:p-8">
+                <p class="text-base text-[#78350F]">
+                    We’re celebrating with a cozy jungle party—good food, fun photos, and lots of smiles.
+                    Please RSVP so we can prepare everything for you.
+                </p>
+
+                <!-- IMPORTANT DATES -->
+                <div class="mt-6 grid gap-3 sm:grid-cols-2">
+                    <div class="rounded-2xl border border-[#AB8653] bg-[#FFFBEB] p-4">
+                        <p class="text-xs font-semibold text-[#78350F]">Celebrant’s Birthday</p>
+                        <p class="mt-1 text-lg font-bold text-[#78350F]">Feb 5</p>
+                        <p class="mt-1 text-sm text-[#78350F]">This is his actual birth date.</p>
+                    </div>
+                    <div class="rounded-2xl border border-[#69A04F] bg-[#FFFBEB] p-4">
+                        <p class="text-xs font-semibold text-[#38802E]">Party Celebration Date</p>
+                        <p class="mt-1 text-lg font-bold text-[#38802E]">Feb 7</p>
+                        <p class="mt-1 text-sm text-[#38802E]">
+                            <span class="font-semibold">We celebrate on Feb 7</span>—please plan for this date.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Countdown -->
+                <div class="mt-6 rounded-2xl border border-[#AB8653] bg-[#FEF6E1] p-4 sm:p-5">
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                            <p class="text-sm font-semibold text-[#78350F]">Countdown to the Party (Feb 7)</p>
+                            <p class="text-xs text-[#78350F]">We’re counting down to celebration day.</p>
+                        </div>
+                        <div class="text-xs font-semibold text-[#38802E]" id="countdownLabel">Loading countdown…</div>
+                    </div>
+
+                    <div class="mt-4 grid grid-cols-4 gap-2 sm:gap-3">
+                        <div class="rounded-2xl bg-[#E2CDB5] p-3 text-center">
+                            <div class="text-2xl font-extrabold text-[#78350F]" id="cdDays">--</div>
+                            <div class="text-[11px] font-semibold text-[#78350F]">Days</div>
+                        </div>
+                        <div class="rounded-2xl bg-[#E2CDB5] p-3 text-center">
+                            <div class="text-2xl font-extrabold text-[#78350F]" id="cdHours">--</div>
+                            <div class="text-[11px] font-semibold text-[#78350F]">Hours</div>
+                        </div>
+                        <div class="rounded-2xl bg-[#E2CDB5] p-3 text-center">
+                            <div class="text-2xl font-extrabold text-[#78350F]" id="cdMins">--</div>
+                            <div class="text-[11px] font-semibold text-[#78350F]">Minutes</div>
+                        </div>
+                        <div class="rounded-2xl bg-[#E2CDB5] p-3 text-center">
+                            <div class="text-2xl font-extrabold text-[#78350F]" id="cdSecs">--</div>
+                            <div class="text-[11px] font-semibold text-[#78350F]">Seconds</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-wrap items-center gap-2 text-xs text-[#78350F]">
+                        <span class="inline-flex items-center gap-2 rounded-full bg-[#A7824E] px-3 py-1 font-semibold text-white">
+                          🕒 Suggested arrival: <span class="font-bold">3:00 PM</span>
+                        </span>
+                                <span class="inline-flex items-center gap-2 rounded-full bg-[#A7824E] px-3 py-1 font-semibold text-white">
+                          📸 Photo time: <span class="font-bold">4:00 PM</span>
+                        </span>
+                                <span class="inline-flex items-center gap-2 rounded-full bg-[#A7824E] px-3 py-1 font-semibold text-white">
+                          🍰 Cake moment: <span class="font-bold">5:00 PM</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full px-6 sm:px-8">
+                <div class="h-6 md:h-12 overflow-hidden">
+                    <img src="connector.svg" class="w-full h-full object-cover object-center block" alt=""/>
+                </div>
+            </div>
+
+
+            <!-- Quick guest prep -->
+            <div class="relative z-50 rounded-3xl border-4 border-[#AB8653] bg-[#FEF6E1] p-6 shadow-sm backdrop-blur sm:p-8">
+                <h2 class="text-lg font-extrabold text-[#78350F]">Quick details to help you prep</h2>
+                <p class="mt-2 text-sm text-[#78350F]">
+                    Here are a few things that make the day smoother for everyone.
+                </p>
+
+                <div class="mt-5 grid gap-4 sm:grid-cols-2">
+                    <div class="rounded-2xl border border-[#748F52] bg-[#748F52] p-4">
+                        <img src="hat.svg" class="h-[46px] w-[46px] object-contain" />
+                        <p class="mt-2 text-sm font-bold text-white">What to wear</p>
+                        <p class="mt-0.5 text-sm text-white">
+                            Light, comfy outfits (greens / earthy tones are welcome).
+                        </p>
+                    </div>
+                    <div class="rounded-2xl border border-[#66BB9D] bg-[#66BB9D] p-4">
+                        <img src="children_playing.svg" class="h-[46px] w-[46px] object-contain" />
+                        <p class="mt-2 text-sm font-bold text-white">Kids-friendly</p>
+                        <p class="mt-0.5 text-sm text-white">
+                            Kid-friendly venue with a pool—please supervise children, especially near the water and
+                            decorations.
+                        </p>
+                    </div>
+                    <div class="rounded-2xl border border-[#ECB543] bg-[#ECB543] p-4">
+                        <img src="food.svg" class="h-[46px] w-[46px] object-contain" />
+                        <p class="mt-2 text-sm font-bold text-white">Food &amp; seating</p>
+                        <p class="mt-0.5 text-sm text-white">
+                            Your RSVP helps us prepare enough food and comfortable seating for all our guests.
+                        </p>
+                    </div>
+                    <div class="rounded-2xl border border-[#AB8653] bg-[#AB8653] p-4">
+                        <img src="gift.svg" class="h-[46px] w-[46px] object-contain" />
+                        <p class="mt-2 text-sm font-bold text-white">Gifts (optional)</p>
+                        <p class="mt-0.5 text-sm text-white">
+                            Your <strong>presence</strong> means the most. Optional gifts: educational toys or
+                            essentials for <strong>ages 2–3</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-5 rounded-2xl border border-[#ECB543] bg-[#FFEEC6] p-4">
+                    <p class="text-sm font-semibold text-[#78350F]">Tip</p>
+                    <p class="mt-1 text-sm text-[#78350F]">
+                        Please <strong>RSVP early</strong> so we can prepare enough food, seating, and party favors for
+                        everyone. Thank you!
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div class="relative overflow-visible">
+                    <img src="monkey_hanging.svg" alt="" class="relative z-40 mx-auto -mt-5 -mb-16"/>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- RSVP card -->
+        <aside class="lg:col-span-5">
+            <div id="rsvp"
+                 class="sticky top-6 rounded-3xl border-4 border-[#AB8653] bg-[#FEF6E1] p-6 shadow-sm backdrop-blur sm:p-8">
+                <div class="flex items-start justify-between gap-3">
+                    <div>
+                        <h2 class="text-xl font-extrabold text-[#78350F]">RSVP</h2>
+                        <p class="mt-1 text-sm text-[#78350F]">
+                            Please confirm your attendance for <span class="font-semibold">Feb 7</span>.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center rounded-full whitespace-nowrap bg-[#AB8653] px-3 py-1 text-xs font-bold text-white">
+                🐵 Jungle Crew
+              </span>
+                </div>
+
+                <form class="mt-6 space-y-4" onsubmit="return handleSubmit(event)">
+                    <!-- Full name (always visible) -->
+                    <div>
+                        <label for="fullName" class="text-sm font-semibold text-[#78350F]">Full name</label>
+                        <input
+                                id="fullName"
+                                name="fullName"
+                                required
+                                placeholder="e.g., Juan Dela Cruz"
+                                class="mt-2 w-full rounded-2xl border border-[#EFD9BB] bg-white px-4 py-3 text-sm outline-none ring-[#AB8653]/30 placeholder:text-[#AB8653] focus:ring-4"
+                        />
+                    </div>
+
+                    <!-- RSVP switch (always visible) -->
+                    <div class="rounded-2xl border border-[#EFD9BB] bg-white p-4">
+                        <div class="flex items-center justify-between gap-3">
+                            <div>
+                                <p class="text-sm font-semibold text-[#78350F]">RSVP</p>
+                                <p id="rsvpHelp" class="mt-0.5 text-xs text-[#78350F]">
+                                    Toggle on if you can join us on <strong>Feb 7</strong>.
+                                </p>
+                            </div>
+
+                            <label class="relative inline-flex cursor-pointer items-center">
+                                <input id="attending" name="attending" type="checkbox" class="peer sr-only" checked/>
+                                <span
+                                        class="h-7 w-12 rounded-full bg-slate-200 transition peer-checked:bg-[#748F52] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#748F52]/30"
+                                ></span>
+                                <span
+                                        class="absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow transition peer-checked:translate-x-5"
+                                ></span>
+                            </label>
+                        </div>
+
+                        <div class="mt-3 flex items-center gap-2 text-xs">
+                            <span
+                                      id="attendingPill"
+                                      class="inline-flex items-center rounded-full bg-[#38802E]/10 px-2.5 py-1 font-semibold text-[#38802E]"
+                              >
+                                ✅ Attending
+                            </span>
+                            <span class="text-[#AB8653]">Switch off if you can’t make it.</span>
+                        </div>
+                    </div>
+
+                    <hr class="my-4 border-t border-[#AB8653]/20" />
+
+                    <!-- ONLY SHOW WHEN ATTENDING -->
+                    <div id="attendingFields" class="space-y-4">
+                        <!-- Optional contact -->
+                        <div class="space-y-4">
+                            <div>
+                                <label for="email" class="text-sm font-semibold text-[#78350F]">
+                                    Email <span class="font-normal text-[#AB8653]">(optional)</span>
+                                </label>
+                                <input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        placeholder="you@example.com"
+                                        class="mt-2 w-full rounded-2xl border border-[#EFD9BB] bg-white px-4 py-3 text-sm outline-none ring-[#AB8653]/30 placeholder:text-[#AB8653] focus:ring-4"
+                                />
+                            </div>
+
+                            <div>
+                                <label for="mobile" class="text-sm font-semibold text-[#78350F]">
+                                    Mobile <span class="font-normal text-[#AB8653]">(optional)</span>
+                                </label>
+                                <input
+                                        id="mobile"
+                                        name="mobile"
+                                        type="tel"
+                                        placeholder="09xx xxx xxxx"
+                                        class="mt-2 w-full rounded-2xl border border-[#EFD9BB] bg-white px-4 py-3 text-sm outline-none ring-[#AB8653]/30 placeholder:text-[#AB8653] focus:ring-4"
+                                />
+                            </div>
+                        </div>
+
+                        <hr class="my-4 border-t border-[#AB8653]/20" />
+
+                        <!-- Guest counts -->
+                        <div id="guestSection" class="rounded-2xl border border-[#EFD9BB] bg-[#E2CDB5] p-4">
+                            <div class="flex flex-wrap items-baseline justify-between gap-2">
+                                <div>
+                                    <p class="text-sm font-semibold text-[#78350F]">Guests</p>
+                                    <p class="mt-0.5 text-xs text-[#78350F]">
+                                        Select counts below (max <strong>8</strong> total).
+                                    </p>
+                                </div>
+                                <span
+                                        id="guestTotalPill"
+                                        class="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-xs font-semibold text-[#78350F]"
+                                >
+                                    Total: <span class="ml-1 font-extrabold" id="guestTotal">0</span>/8
+                                </span>
+                            </div>
+
+                            <div class="mt-4 space-y-4">
+                                <!-- Adults -->
+                                <div>
+                                    <p class="text-sm font-semibold text-[#78350F]">Adults</p>
+                                    <input type="hidden" id="adultCount" name="adultCount" value="1"/>
+                                    <div class="mt-2 grid grid-cols-4 gap-2">
+                                        <button type="button" class="guest-btn adult-btn" data-type="adult"
+                                                data-value="1">1
+                                        </button>
+                                        <button type="button" class="guest-btn adult-btn" data-type="adult"
+                                                data-value="2">2
+                                        </button>
+                                        <button type="button" class="guest-btn adult-btn" data-type="adult"
+                                                data-value="3">3
+                                        </button>
+                                        <button type="button" class="guest-btn adult-btn" data-type="adult"
+                                                data-value="4">4
+                                        </button>
+                                        <button type="button" class="guest-btn adult-btn" data-type="adult"
+                                                data-value="5">5
+                                        </button>
+                                        <button type="button" class="guest-btn adult-btn" data-type="adult"
+                                                data-value="6">6
+                                        </button>
+                                        <button type="button" class="guest-btn adult-btn" data-type="adult"
+                                                data-value="7">7
+                                        </button>
+                                        <button type="button" class="guest-btn adult-btn" data-type="adult"
+                                                data-value="8">8
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Kids -->
+                                <div>
+                                    <p class="text-sm font-semibold text-[#78350F]">Kids</p>
+                                    <input type="hidden" id="kidCount" name="kidCount" value="0"/>
+                                    <div class="mt-2 grid grid-cols-4 gap-2">
+                                        <button type="button" class="guest-btn kid-btn" data-type="kid" data-value="0">
+                                            0
+                                        </button>
+                                        <button type="button" class="guest-btn kid-btn" data-type="kid" data-value="1">
+                                            1
+                                        </button>
+                                        <button type="button" class="guest-btn kid-btn" data-type="kid" data-value="2">
+                                            2
+                                        </button>
+                                        <button type="button" class="guest-btn kid-btn" data-type="kid" data-value="3">
+                                            3
+                                        </button>
+                                        <button type="button" class="guest-btn kid-btn" data-type="kid" data-value="4">
+                                            4
+                                        </button>
+                                        <button type="button" class="guest-btn kid-btn" data-type="kid" data-value="5">
+                                            5
+                                        </button>
+                                        <button type="button" class="guest-btn kid-btn" data-type="kid" data-value="6">
+                                            6
+                                        </button>
+                                        <button type="button" class="guest-btn kid-btn" data-type="kid" data-value="7">
+                                            7
+                                        </button>
+                                        <button type="button" class="guest-btn kid-btn" data-type="kid" data-value="8">
+                                            8
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="mt-3 text-xs text-[#AB8653]">
+                                Tip: We recommend at least <strong>1 adult</strong> selected.
+                            </p>
+                        </div>
+
+                        <!-- Message for celebrant -->
+                        <div>
+                            <label for="messageForCelebrant" class="text-sm font-semibold text-[#78350F]">
+                                Message for the celebrant <span class="font-normal text-[#AB8653]">(optional)</span>
+                            </label>
+                            <textarea
+                                    id="messageForCelebrant"
+                                    name="messageForCelebrant"
+                                    rows="3"
+                                    placeholder="Leave a sweet message for the birthday boy…"
+                                    class="mt-2 w-full resize-none rounded-2xl border border-[#EFD9BB] bg-white px-4 py-3 text-sm outline-none ring-[#AB8653]/30 placeholder:text-[#AB8653] focus:ring-4"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button
+                            type="submit"
+                            class="w-full rounded-2xl bg-[#78350F] px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-[#92400E] focus:outline-none focus:ring-4 focus:ring-[#AB8653]/30"
+                    >
+                        Submit RSVP
+                    </button>
+
+                    <!-- Important reminder (always visible) -->
+                    <div class="rounded-2xl border border-amber-300 bg-amber-50 p-4">
+                        <div class="flex items-start gap-3">
+                            <div class="mt-0.5 grid h-9 w-9 place-items-center rounded-2xl bg-amber-200/60 text-amber-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24"
+                                     fill="currentColor">
+                                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 14h-2v-2h2Zm0-4h-2V6h2Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-extrabold text-amber-900">
+                                    Important: Please plan for <span
+                                        class="underline decoration-amber-400 decoration-2 underline-offset-2">Feb 7</span>
+                                </p>
+                                <p class="mt-1 text-sm text-[#78350F]">
+                                    His birthday is <span class="font-semibold">Feb 5</span>, but the celebration party
+                                    is on
+                                    <span class="font-extrabold text-[#78350F]">Feb 7</span>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-6 border-t-2 border-[#AB8653]/40" />
+
+                    <!-- Add to calendar -->
+                    <div class="rounded-2xl border border-[#EFD9BB] bg-[#E2CDB5] p-4">
+                        <p class="text-sm font-semibold text-[#78350F]">Add to Calendar</p>
+                        <p class="mt-0.5 text-xs text-[#78350F]">Save the party date so you don’t miss it.</p>
+
+                        <a
+                                id="addToCalendarBtn"
+                                href="#"
+                                class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#78350F] px-4 py-3 text-sm font-bold text-white ring-[#AB8653]/30 hover:bg-[#92400E] focus:outline-none focus:ring-4"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24"
+                                 fill="currentColor">
+                                <path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1Zm12 8H5v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9ZM6 6a1 1 0 0 0-1 1v1h14V7a1 1 0 0 0-1-1H6Z"/>
+                            </svg>
+                            Add Feb 7 to calendar
+                        </a>
+
+                        <p class="mt-2 text-[11px] text-[#AB8653]">
+                            Works with Google/Apple/Outlook (downloads an .ics file).
+                        </p>
+                    </div>
+
+                    <div id="submitResult"
+                         class="hidden rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900"></div>
+
+                    <!-- Guest button styling -->
+                    <style>
+                        .guest-btn {
+                            border-radius: 1rem;
+                            border: 1px solid #AB8653;
+                            background: #FBF1DC;
+                            padding: .65rem .5rem;
+                            font-size: .875rem;
+                            font-weight: 800;
+                            color: #78350F;
+                            transition: background-color .15s ease, border-color .15s ease, transform .05s ease;
+                            outline: none;
+                            min-height: 44px;
+                        }
+
+                        .guest-btn:hover {
+                            background: #CBA673;
+                        }
+
+                        .guest-btn:active {
+                            transform: translateY(1px);
+                        }
+
+                        .guest-btn.selected {
+                            border-color: #AB8653;
+                            background: #AB8653;
+                            color: white;
+                        }
+
+                        .guest-btn:focus {
+                            box-shadow: 0 0 0 4px rgba(171, 134, 83, 0.25);
+                        }
+
+                        .guest-btn[disabled] {
+                            opacity: .45;
+                            cursor: not-allowed;
+                        }
+                    </style>
+
+                    <script>
+                        // Elements
+                        const attendingEl = document.getElementById("attending");
+                        const attendingPill = document.getElementById("attendingPill");
+                        const attendingFields = document.getElementById("attendingFields");
+
+                        // Show/hide attending-only inputs
+                        function setAttendingUI() {
+                            const isAttending = attendingEl.checked;
+
+                            attendingPill.textContent = isAttending ? "✅ Attending" : "❌ Not attending";
+                            attendingPill.className =
+                                "inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold " +
+                                (isAttending ? "bg-[#38802E]/10 text-[#38802E]" : "bg-slate-100 text-[#78350F]");
+
+                            // Toggle visibility
+                            attendingFields.classList.toggle("hidden", !isAttending);
+
+                            // When hidden, also disable the fields so they don't validate / submit accidentally
+                            attendingFields.querySelectorAll("input, textarea, button, a, select").forEach(el => {
+                                // keep buttons disabled? we only have type=button inside; safe to disable
+                                if (el.tagName === "A") return; // anchors don't support disabled; fine
+                                el.disabled = !isAttending;
+                            });
+                        }
+
+                        attendingEl.addEventListener("change", setAttendingUI);
+
+                        // Guest buttons max total 8
+                        const adultHidden = document.getElementById("adultCount");
+                        const kidHidden = document.getElementById("kidCount");
+                        const totalEl = document.getElementById("guestTotal");
+
+                        function updateSelections() {
+                            document.querySelectorAll(".adult-btn").forEach(btn => {
+                                btn.classList.toggle("selected", Number(btn.dataset.value) === Number(adultHidden.value));
+                            });
+                            document.querySelectorAll(".kid-btn").forEach(btn => {
+                                btn.classList.toggle("selected", Number(btn.dataset.value) === Number(kidHidden.value));
+                            });
+                            totalEl.textContent = String(Number(adultHidden.value) + Number(kidHidden.value));
+                        }
+
+                        function selectGuest(type, value) {
+                            const v = Number(value);
+                            const adults = type === "adult" ? v : Number(adultHidden.value);
+                            const kids = type === "kid" ? v : Number(kidHidden.value);
+
+                            if (adults + kids > 8) return;
+
+                            adultHidden.value = String(adults);
+                            kidHidden.value = String(kids);
+                            updateSelections();
+                        }
+
+                        document.querySelectorAll(".guest-btn").forEach(btn => {
+                            btn.addEventListener("click", () => selectGuest(btn.dataset.type, btn.dataset.value));
+                        });
+
+                        // Defaults
+                        selectGuest("adult", "1");
+                        selectGuest("kid", "0");
+
+                        // Add to Calendar (.ics)
+                        (function initIcs() {
+                            const now = new Date();
+                            const year = now.getFullYear();
+                            let start = new Date(year, 1, 7, 15, 0, 0); // Feb 7 3:00 PM
+                            let end = new Date(year, 1, 7, 18, 0, 0); // Feb 7 6:00 PM
+
+                            if (start.getTime() < Date.now()) {
+                                start = new Date(year + 1, 1, 10, 15, 0, 0);
+                                end = new Date(year + 1, 1, 10, 18, 0, 0);
+                            }
+
+                            function fmt(d) {
+                                const pad = n => String(n).padStart(2, "0");
+                                return (
+                                    d.getFullYear() +
+                                    pad(d.getMonth() + 1) +
+                                    pad(d.getDate()) +
+                                    "T" +
+                                    pad(d.getHours()) +
+                                    pad(d.getMinutes()) +
+                                    pad(d.getSeconds())
+                                );
+                            }
+
+                            const title = "Jungle 1st Birthday Celebration (Party Date)";
+                            const description = "Birthday is Feb 5, but the celebration party is on Feb 7. See you there!";
+                            const location = "Party Venue (with pool)"; // replace with actual venue
+
+                            const ics =
+                                `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//JungleRSVP//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:${Date.now()}@junglersvp
+DTSTAMP:${fmt(new Date())}
+DTSTART:${fmt(start)}
+DTEND:${fmt(end)}
+SUMMARY:${title}
+DESCRIPTION:${description}
+LOCATION:${location}
+END:VEVENT
+END:VCALENDAR`;
+
+                            const blob = new Blob([ics], {type: "text/calendar;charset=utf-8"});
+                            const url = URL.createObjectURL(blob);
+
+                            const a = document.getElementById("addToCalendarBtn");
+                            a.href = url;
+                            a.download = "Jungle-1st-Birthday-Feb10.ics";
+                        })();
+
+                        // Init UI on load (hides attending-only when toggled off)
+                        setAttendingUI();
+
+                        // Submit handler
+                        function handleSubmit(e) {
+                            e.preventDefault();
+                            const form = e.target;
+
+                            const isAttending = form.attending.checked;
+
+                            const data = {
+                                fullName: form.fullName.value.trim(),
+                                attending: isAttending ? "yes" : "no",
+                                // only present when attending
+                                email: isAttending ? (form.email?.value || "").trim() : "",
+                                mobile: isAttending ? (form.mobile?.value || "").trim() : "",
+                                adultCount: isAttending ? Number(form.adultCount?.value || 0) : 0,
+                                kidCount: isAttending ? Number(form.kidCount?.value || 0) : 0,
+                                messageForCelebrant: isAttending ? (form.messageForCelebrant?.value || "").trim() : "",
+                            };
+
+                            const result = document.getElementById("submitResult");
+                            result.classList.remove("hidden");
+
+                            if (!isAttending) {
+                                result.textContent = `Thanks, ${data.fullName || "guest"}! ✅ Noted that you can’t make it.`;
+                                return false;
+                            }
+
+                            const total = data.adultCount + data.kidCount;
+                            result.textContent =
+                                `Thanks, ${data.fullName || "guest"}! ✅ Headcount: ${data.adultCount} adult(s), ${data.kidCount} kid(s) • Total ${total}/8 (Template mode — connect to your backend later.)`;
+
+                            return false;
+                        }
+                    </script>
+                </form>
+
+            </div>
+        </aside>
+    </section>
+    <!-- Where to go after the celebration (Pangasinan) -->
+
+    <section id="coras-manor"
+             class="relative z-30 mt-10 rounded-3xl border-4 border-[#AB8653] bg-[#FEF6E1] p-6 shadow-sm sm:p-8">
+
+        <!-- Map -->
+        <div class="overflow-hidden rounded-2xl border border-[#AB8653]/40">
+            <iframe
+                    title="Coras Manor Map"
+                    class="h-[360px] w-full border-0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=Coras%20Manor&output=embed">
+            </iframe>
+        </div>
+
+        <!-- Driving buttons -->
+        <div class="mt-4 flex flex-wrap gap-3">
+            <!-- Google Maps -->
+            <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=16.0322038,120.450968"
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex items-center justify-center rounded-full bg-[#FFCB40] px-5 py-2 text-sm font-bold text-[#78350F] hover:bg-[#E6B83A]"
+            >
+                <img src="gmaps_icon.svg" class="h-5 w-5 object-contain flex-shrink-0" /> &nbsp; Drive with Google Maps
+            </a>
+
+            <!-- Waze -->
+            <a
+                    href="https://waze.com/ul?ll=16.0322038,120.450968&navigate=yes"
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex items-center justify-center rounded-full bg-[#E2CDB5] px-5 py-2 text-sm font-bold text-[#78350F] hover:bg-[#D6BFA4]"
+            >
+                <img src="waze_icon.svg" class="h-5 w-5 object-contain flex-shrink-0" /> &nbsp; Drive with Waze
+            </a>
+        </div>
+
+    </section>
+
+
+    <section id="pangasinan"
+             class="relative z-30 mt-10 rounded-3xl border-4 border-[#AB8653] bg-gradient-to-b from-[#FEF6E1] to-transparent p-6 shadow-sm backdrop-blur sm:p-8">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+            <div>
+                <h2 class="text-lg font-extrabold text-[#78350F]">
+                    Where to go after the celebration in
+                    <span class="text-[#AB8653] text-2xl underline decoration-[#AB8653]/40 underline-offset-4">
+                      Pangasinan
+                    </span>
+                </h2>
+                <p class="mt-2 text-sm text-[#78350F]">
+                    A quick mini-guide for beaches, landmarks, and places to stay. Tap a card to update the map.
+                </p>
+            </div>
+
+            <a
+                    id="openMapAll"
+                    href="https://www.google.com/maps?q=Pangasinan%2C%20Philippines"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-50 px-4 py-2.5 text-sm font-bold text-[#78350F] ring-emerald-600/20 hover:bg-emerald-100 focus:outline-none focus:ring-4"
+            >
+                <!-- map icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.5 3.5a1 1 0 0 0-.95-.08l-5.55 2.22-6-2.4a1 1 0 0 0-.74 0L3.5 4.5a1 1 0 0 0-.5.87v14a1 1 0 0 0 1.45.9l5.55-2.22 6 2.4a1 1 0 0 0 .74 0l3.76-1.5a1 1 0 0 0 .5-.87v-14a1 1 0 0 0-.5-.58ZM10 18.62l-4 1.6V6.38l4-1.6Zm6 1l-4-1.6V5.38l4 1.6Zm4-1.4-2 0.8V6.38l2-0.8Z"/>
+                </svg>
+                Open Pangasinan Map
+            </a>
+        </div>
+
+        <!-- Map -->
+        <div class="mt-6 grid gap-4 lg:grid-cols-12">
+            <div class="lg:col-span-7">
+                <div class="overflow-hidden rounded-3xl border border-[#EFD9BB] bg-white shadow-sm">
+                    <div class="flex items-center justify-between gap-3 border-b border-[#EFD9BB] bg-[#E2CDB5] px-4 py-3">
+                        <div>
+                            <p class="text-sm font-extrabold text-[#78350F]">Map Preview</p>
+                            <p class="text-xs text-[#78350F]">Click any card to focus the map.</p>
+                        </div>
+                        <span class="inline-flex items-center rounded-full bg-[#D7B07B] px-3 py-1 text-xs font-semibold text-[#78350F]">
+            🗺️ Interactive
+          </span>
+                    </div>
+
+                    <div class="aspect-[16/11] sm:aspect-[16/10]">
+                        <iframe
+                                id="pangasinanMap"
+                                title="Pangasinan map"
+                                class="h-full w-full"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                src="https://www.google.com/maps?q=Pangasinan%2C%20Philippines&output=embed"
+                        ></iframe>
+                    </div>
+                </div>
+
+                <p class="mt-2 text-xs text-[#AB8653]">
+                    Note: The embedded map uses a simple “search query” embed (no API key needed).
+                </p>
+            </div>
+
+            <!-- Lists -->
+            <div class="lg:col-span-5">
+                <!-- Filter tabs -->
+                <div class="rounded-3xl border border-[#EFD9BB] bg-[#FBF2DC] p-4 shadow-sm">
+                    <p class="text-sm font-extrabold text-[#78350F]">Browse</p>
+                    <div class="mt-3 flex flex-wrap gap-2"> <!-- tab-btn border-[#AB8653] rounded-2xl bg-[#F8EDD7] px-4 py-2 text-xs font-extrabold text-[#AB8653] hover:bg-[#AB8653]/80 hover:text-white focus:outline-none focus:ring-4 focus:ring-[#AB8653]/30 -->
+                        <button type="button" data-tab="places"
+                                class="tab-btn rounded-2xl bg-[#AB8653] px-4 py-2 text-xs font-extrabold text-white shadow-sm focus:outline-none focus:ring-4 focus:ring-[#AB8653]/30">
+                            Places & Beaches
+                        </button>
+                        <button type="button" data-tab="landmarks"
+                                class="tab-btn border-[#AB8653] rounded-2xl bg-[#F8EDD7] px-4 py-2 text-xs font-extrabold text-[#AB8653] hover:bg-slate-200 focus:outline-none focus:ring-4 focus:ring-[#AB8653]/30">
+                            Landmarks
+                        </button>
+                        <button type="button" data-tab="stays"
+                                class="tab-btn border-[#AB8653] rounded-2xl bg-[#F8EDD7] px-4 py-2 text-xs font-extrabold text-[#AB8653] hover:bg-slate-200 focus:outline-none focus:ring-4 focus:ring-[#AB8653]/30">
+                            Hotels & Stays
+                        </button>
+                    </div>
+
+                    <div id="pangasinanCards" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                        <!-- cards injected here -->
+                    </div>
+                </div>
+
+                <div class="mt-4 rounded-3xl border border-[#FFEEC6] bg-[#FFEEC6]/90 p-4">
+                    <p class="text-sm font-extrabold text-[#78350F]">Quick tip</p>
+                    <p class="mt-1 text-sm text-[#78350F]">
+                        If you’re doing a day trip, pick <strong>one area</strong> (e.g., Alaminos / Bolinao / Manaoag)
+                        to avoid too much travel time.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            (function () {
+                const mapEl = document.getElementById("pangasinanMap");
+                const cardsWrap = document.getElementById("pangasinanCards");
+                const tabBtns = Array.from(document.querySelectorAll(".tab-btn"));
+
+                // Curated suggestions (mix of places, landmarks, and accommodations)
+                // You can freely add/remove items here.
+                const DATA = {
+                    places: [
+                        {
+                            title: "Hundred Islands National Park",
+                            area: "Alaminos",
+                            tags: ["Island hopping", "Family-friendly"],
+                            query: "Hundred Islands National Park Alaminos Pangasinan",
+                            note: "Classic Pangasinan trip: boats + islands + viewpoints."
+                        },
+                        {
+                            title: "Patar Beach",
+                            area: "Bolinao",
+                            tags: ["Beach", "Sunset"],
+                            query: "Patar Beach Bolinao Pangasinan",
+                            note: "Wide shoreline and great sunset photos."
+                        },
+                        {
+                            title: "Bolinao Falls",
+                            area: "Bolinao",
+                            tags: ["Nature", "Swim spot"],
+                            query: "Bolinao Falls Pangasinan",
+                            note: "Refreshing falls—bring extra clothes."
+                        },
+                        {
+                            title: "Cabongaoan Beach (Death Pool)",
+                            area: "Burgos",
+                            tags: ["Beach", "Scenic"],
+                            query: "Cabongaoan Beach Death Pool Burgos Pangasinan",
+                            note: "Best at low tide; always be cautious near rock pools."
+                        }
+                    ],
+                    landmarks: [
+                        {
+                            title: "Minor Basilica of Our Lady of the Rosary of Manaoag",
+                            area: "Manaoag",
+                            tags: ["Pilgrimage", "Landmark"],
+                            query: "Minor Basilica of Our Lady of the Rosary of Manaoag Pangasinan",
+                            note: "A well-known church and pilgrimage destination."
+                        },
+                        {
+                            title: "Cape Bolinao Lighthouse",
+                            area: "Bolinao",
+                            tags: ["Viewpoint", "Landmark"],
+                            query: "Cape Bolinao Lighthouse Pangasinan",
+                            note: "Iconic lighthouse with coastal views."
+                        },
+                        {
+                            title: "Enchanted Cave",
+                            area: "Bolinao",
+                            tags: ["Cave pool", "Unique"],
+                            query: "Enchanted Cave Bolinao Pangasinan",
+                            note: "Short stop with a cave pool—check local guidelines."
+                        },
+                        {
+                            title: "Lingayen Beach",
+                            area: "Lingayen",
+                            tags: ["Beachwalk", "Relax"],
+                            query: "Lingayen Beach Pangasinan",
+                            note: "Easy, laid-back coastal stop."
+                        }
+                    ],
+                    stays: [
+                        {
+                            title: "The Monarch Hotel",
+                            area: "Calasiao",
+                            tags: ["Hotel", "Comfort"],
+                            query: "The Monarch Hotel Calasiao Pangasinan",
+                            note: "A popular option for comfort stays in the area."
+                        },
+                        {
+                            title: "Puerto Del Sol Beach Resort",
+                            area: "Bolinao",
+                            tags: ["Beach resort", "Relax"],
+                            query: "Puerto Del Sol Beach Resort Bolinao Pangasinan",
+                            note: "Beach resort vibes—good for a chill overnight."
+                        },
+                        {
+                            title: "Dagupan City Hotels",
+                            area: "Dagupan",
+                            tags: ["City base", "Food trip"],
+                            query: "Hotels in Dagupan Pangasinan",
+                            note: "Convenient base if you want a city + food stop."
+                        },
+                        {
+                            title: "Alaminos City Hotels",
+                            area: "Alaminos",
+                            tags: ["Near Hundred Islands", "Overnight"],
+                            query: "Hotels in Alaminos Pangasinan",
+                            note: "Great if you’re doing Hundred Islands early the next day."
+                        }
+                    ]
+                };
+
+                function mapSrcForQuery(q) {
+                    return "https://www.google.com/maps?q=" + encodeURIComponent(q) + "&output=embed";
+                }
+
+                function mapsLink(q) {
+                    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+                }
+
+                function render(tab) {
+                    const items = DATA[tab] || [];
+                    cardsWrap.innerHTML = items.map((x, idx) => {
+                        return `
+            <button
+              type="button"
+              class="group w-full text-left rounded-2xl border border-[#EFD9BB] bg-[#FBF2DC] p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-[#AB8653] hover:bg-[#CBA673]/40 focus:outline-none focus:ring-4 focus:ring-[#AB8653]/30"
+              data-query="${x.query}"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-extrabold text-[#78350F]">${x.title}</p>
+                  <p class="mt-0.5 text-xs font-semibold text-[#78350F]">${x.area}, Pangasinan</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-[#78350F] px-2.5 py-1 text-white text-[11px] font-extrabold text-[#78350F] group-hover:bg-[#78350F]/80">
+                  View
+                </span>
+              </div>
+
+              <p class="mt-2 text-xs text-[#78350F]">${x.note}</p>
+
+              <div class="mt-3 flex flex-wrap gap-2">
+                ${x.tags.map(t => `<span class="inline-flex items-center rounded-full bg-[#FFE8B2] px-2.5 py-1 text-[11px] font-semibold text-[#78350F]">${t}</span>`).join("")}
+              </div>
+
+              <div class="mt-3">
+                <a
+                  href="${mapsLink(x.query)}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-xs font-extrabold text-[#78350F] hover:text-emerald-900"
+                  onclick="event.stopPropagation()"
+                >
+                  Open in Google Maps
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/>
+                  </svg>
+                </a>
+              </div>
+            </button>
+          `;
+                    }).join("");
+
+                    // bind click -> update map
+                    cardsWrap.querySelectorAll("button[data-query]").forEach(btn => {
+                        btn.addEventListener("click", () => {
+                            const q = btn.getAttribute("data-query");
+                            mapEl.src = mapSrcForQuery(q);
+                            // helpful: scroll map into view on mobile
+                            mapEl.closest(".overflow-hidden")?.scrollIntoView({behavior: "smooth", block: "start"});
+                        });
+                    });
+                }
+
+                function setActiveTab(tab) {
+                    tabBtns.forEach(b => {
+                        const active = b.getAttribute("data-tab") === tab;
+                        b.className = active
+                            ? "tab-btn rounded-2xl bg-[#AB8653] px-4 py-2 text-xs font-extrabold text-white shadow-sm focus:outline-none focus:ring-4 focus:ring-[#AB8653]/30"
+                            : "tab-btn border-[#AB8653] rounded-2xl bg-[#F8EDD7] px-4 py-2 text-xs font-extrabold text-[#AB8653] hover:bg-[#AB8653]/80 hover:text-white focus:outline-none focus:ring-4 focus:ring-[#AB8653]/30";
+                    });
+                    render(tab);
+                }
+
+                tabBtns.forEach(btn => btn.addEventListener("click", () => setActiveTab(btn.getAttribute("data-tab"))));
+
+                // default tab
+                setActiveTab("places");
+            })();
+        </script>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="relative z-30 mt-10 rounded-3xl border border-[#78350F] bg-[#78350F] p-6 text-center text-sm text-white shadow-sm backdrop-blur sm:p-8">
+        <p class="font-semibold text-white">See you in the jungle! 🦓🦒🐘</p>
+        <p class="mt-2">
+            Questions? Message the parents anytime.
+        </p>
+    </footer>
+    <div class="relative z-20 w-full">
+        <div class="lg:hidden pointer-events-none relative flex items-end justify-between px-4 sm:px-8">
+            <div class="h-auto w-[42vw] sm:w-[28vw] max-w-none -translate-x-[-20%]">
+                <img src="footer_lion.svg" alt="" class="" />
+            </div>
+            <div class="h-auto w-[48vw] sm:w-[30vw] md:w-[22vw] max-w-none -translate-x-[10%]">
+                <img src="footer_elephant.svg" alt="" class="" />
+            </div>
+        </div>
+        <div class="hidden lg:flex pointer-events-none absolute left-0 right-0 bottom-0  items-end justify-between px-4 sm:px-8 -translate-y-[25%]">
+            <div class="h-auto w-[42vw] sm:w-[28vw] max-w-none -translate-x-[40%]">
+                <img src="footer_lion.svg" alt="" class="" />
+            </div>
+            <div class="h-auto w-[48vw] sm:w-[30vw] md:w-[22vw] max-w-none -translate-x-[-65%]">
+                <img src="footer_elephant.svg" alt="" class="" />
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer art (visual only, no layout space) -->
+<div class="pointer-events-none relative w-full h-0 overflow-visible">
+    <!-- Background -->
+    <img
+            src="footer_background.svg"
+            alt=""
+            class="absolute bottom-0 left-0 z-10 w-full h-auto"
+    />
+
+    <!-- Left foliage -->
+    <div class="absolute left-0 bottom-0 -translate-y-[45%] z-0">
+        <img src="footer_left_foliage.svg" alt="" class="w-[18vw] h-auto max-w-none" />
+    </div>
+
+    <!-- Right foliage -->
+    <div class="absolute right-0 bottom-0 -translate-y-[45%] z-0 ">
+        <img src="footer_rigth_foliage.svg" alt="" class="w-[18vw] h-auto max-w-none" />
+    </div>
+</div>
+
+
+
+
+<script>
+    // =========================
+    // Countdown to Feb 7
+    // =========================
+    (function initCountdown() {
+        // NOTE: Uses the user's local timezone.
+        // Party date: Feb 7 (set time at 15:00 as a friendly default)
+        const now = new Date();
+        const year = now.getFullYear();
+
+        // Feb is month index 1 (0=Jan, 1=Feb)
+        const partyDate = new Date(year, 1, 7, 15, 0, 0);
+
+        // If already passed for this year, set next year (useful for reusability)
+        if (partyDate.getTime() < now.getTime()) {
+            partyDate.setFullYear(year + 1);
+        }
+
+        const elDays = document.getElementById("cdDays");
+        const elHours = document.getElementById("cdHours");
+        const elMins = document.getElementById("cdMins");
+        const elSecs = document.getElementById("cdSecs");
+        const label = document.getElementById("countdownLabel");
+
+        function pad2(n) {
+            return String(n).padStart(2, "0");
+        }
+
+        function tick() {
+            const t = partyDate.getTime() - Date.now();
+
+            if (t <= 0) {
+                elDays.textContent = "00";
+                elHours.textContent = "00";
+                elMins.textContent = "00";
+                elSecs.textContent = "00";
+                label.textContent = "It’s party time! 🎉";
+                return;
+            }
+
+            const totalSeconds = Math.floor(t / 1000);
+            const days = Math.floor(totalSeconds / (3600 * 24));
+            const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+            const mins = Math.floor((totalSeconds % 3600) / 60);
+            const secs = totalSeconds % 60;
+
+            elDays.textContent = pad2(days);
+            elHours.textContent = pad2(hours);
+            elMins.textContent = pad2(mins);
+            elSecs.textContent = pad2(secs);
+
+            // Friendly label
+            const partyText = partyDate.toLocaleString(undefined, {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+            });
+            label.textContent = "Party starts: " + partyText;
+        }
+
+        tick();
+        setInterval(tick, 1000);
+    })();
+
+    // =========================
+    // Demo form submit handler
+    // =========================
+    function handleSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+
+        const data = {
+            fullName: form.fullName.value.trim(),
+            email: form.email.value.trim(),
+            mobile: form.mobile.value.trim(),
+            attendance: form.attendance.value,
+            guestCount: form.guestCount.value,
+            note: form.note.value.trim(),
+        };
+
+        const result = document.getElementById("submitResult");
+        result.classList.remove("hidden");
+        result.textContent =
+            "Thanks, " +
+            (data.fullName || "guest") +
+            "! Your RSVP is noted for Feb 7. ✅ (Template mode — connect to your backend later.)";
+
+        // Optional: reset form
+        form.reset();
+        return false;
+    }
+</script>
+</body>
+</html>
