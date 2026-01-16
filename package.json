@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "prisma:generate": "dotenv -- prisma generate",
-    "prisma:migrate": "dotenv -- prisma migrate dev"
+    "prisma:migrate": "dotenv -- prisma migrate dev",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
