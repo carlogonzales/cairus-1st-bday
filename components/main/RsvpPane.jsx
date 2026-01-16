@@ -1,6 +1,9 @@
 'use client';
 import {useEffect, useMemo, useState} from "react";
 import invitationsData from "@/assets/data/invitations.json";
+import Link from "next/link";
+import messengerIconImage from "@/assets/images/messenger.svg";
+import Image from "next/image";
 
 const RsvpPane = () => {
   const [attending, setAttending] = useState(true);
@@ -236,7 +239,7 @@ END:VCALENDAR`;
         {noCode && (
           <div className="mt-6 rounded-2xl border border-[#D97706] bg-[#FEF3C7] p-4">
             <div className="flex items-start gap-3">
-              <div className="mt-0.5 grid h-9 w-9 place-items-center rounded-2xl bg-[#F59E0B] text-[#78350F] shadow-sm">
+              <div className="mt-0.5 grid h-9 w-9 place-items-center rounded-2xl text-[#D97706]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -250,11 +253,47 @@ END:VCALENDAR`;
                 <p className="text-sm font-extrabold text-[#78350F]">
                   RSVP link required
                 </p>
-                <p className="mt-1 text-sm text-[#451A03]">
-                  Please contact{" "}
-                  <span className="font-extrabold underline decoration-[#B45309] decoration-2 underline-offset-2">
-                    Carlo Gonzales / April Joy Gonzales
-                  </span>{" "} to get your personal RSVP link.
+                {/*
+    class="h-4 w-4 text-[#1877F2]"*/}
+                <p className="mt-1 flex flex-wrap items-center gap-2 text-sm text-[#451A03]">
+                  <span>Please contact</span>
+
+                  <span className="inline-flex flex-wrap items-center gap-2 font-extrabold">
+                    <Link
+                      href="https://m.me/carlo.a.gonzales"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 underline decoration-[#B45309] decoration-2 underline-offset-2 hover:text-[#78350F]"
+                    >
+                      <Image
+                        src={messengerIconImage}
+                        alt=""
+                        height={16}
+                        width={16}
+                        className="align-middle"
+                      />
+                      <span className="leading-none">Carlo Gonzales</span>
+                    </Link>
+
+                    <Link
+                      href="https://m.me/eiipyon"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 underline decoration-[#B45309] decoration-2 underline-offset-2 hover:text-[#78350F]"
+                    >
+                      <Image
+                        src={messengerIconImage}
+                        alt=""
+                        height={16}
+                        width={16}
+                        className="align-middle"
+                      />
+                      <span className="leading-none">April Joy Gonzales</span>
+                    </Link>
+                  </span>
+
+
+                  <span>to get your personal RSVP link.</span>
                 </p>
               </div>
             </div>
