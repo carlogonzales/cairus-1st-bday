@@ -36,10 +36,31 @@ function generateInvitations(names = []) {
 // ------------------------
 
 const names = [
-  "Juan Dela Cruz",
-  "Maria Santos",
-  "Pedro Reyes",
-  "Carlo Gonzales",
+  // Carlo's Side
+  'Chelsea Gonzales',
+  'Gonzales Family (Angie & Narciso',
+  'Gille Family (Jean & Toeni)',
+  'Ate Lole',
+  'Ate Rosie',
+  'Alvarico Family (Kuya Boyet)',
+  'Gonzales Family (Tito Gore & Tita Grace)',
+  'Monic\'s Family',
+  'Marie Kris\'s Family',
+
+  //Joyse's Side
+  'Dela Cruz Family (Federico & Grace)',
+  'Deneb dela Cruz',
+  'Ka Terence',
+  'Ate Ema',
+  'Ate Terry',
+  'Nita Milanio',
+  'Jeremiah Poserio',
+  'Jean dela Cruz ',
+  'Jacky & Mizzy Galiste',
+  'Ingrid Valdez',
+  'Belen Mateo',
+  'David Mateo',
+  'Jesus Mateo',
 ];
 
 const result = generateInvitations(names);
