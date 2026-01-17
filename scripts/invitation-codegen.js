@@ -43,6 +43,7 @@ const names = [
   'Ate Lole',
   'Ate Rosie',
   'Alvarico Family (Kuya Boyet)',
+  'Alvarico Family (Kuya R\'Win)',
   'Gonzales Family (Tito Gore & Tita Grace)',
   'Monic\'s Family',
   'Marie Kris\'s Family',
