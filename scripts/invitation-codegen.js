@@ -46,6 +46,13 @@ const names = [
   'Gonzales Family (Tito Gore & Tita Grace)',
   'Monic\'s Family',
   'Marie Kris\'s Family',
+  'Estrella Salafranca',
+  'Patricia dela Peña',
+  'Lim Family (Esmeralda & Ferdinand)',
+  'Lim Family (Franz)',
+  'Erickson Salafranca',
+  'Salafranca Family (Geoffrey & Yvana)',
+  'Nestor Joven',
 
   //Joyse's Side
   'Dela Cruz Family (Federico & Grace)',
