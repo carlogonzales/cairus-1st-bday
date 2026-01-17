@@ -4,6 +4,7 @@ import invitationsData from "@/assets/data/invitations.json";
 import Link from "next/link";
 import messengerIconImage from "@/assets/images/messenger.svg";
 import Image from "next/image";
+import {FaLink} from "react-icons/fa";
 
 const RsvpPane = () => {
   const [attending, setAttending] = useState(true);
@@ -522,6 +523,16 @@ END:VCALENDAR`;
                   <p className="mt-1 text-sm text-[#78350F]">
                     His birthday is <span className="font-semibold">Feb 5</span>, but the celebration party is on{" "}
                     <span className="font-extrabold text-[#78350F]">Feb 7</span>.
+                  </p>
+                  <p className="mt-1 text-sm text-[#78350F]">
+                    <span className="font-semibold">Room reservations</span> are available on the{" "}
+                    <Link
+                      href="https://corasmanorandgarden.com/rooms/"
+                      className="inline-flex items-center gap-1 underline decoration-amber-400 decoration-2 underline-offset-2 font-medium"
+                    >
+                      <FaLink className="text-xs" />
+                      Coras Manor website
+                    </Link>.
                   </p>
                 </div>
               </div>

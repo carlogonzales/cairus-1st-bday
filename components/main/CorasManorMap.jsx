@@ -2,14 +2,40 @@
 import wazeIconImage from "@/assets/images/waze_icon.svg";
 import gmapsIconImage from "@/assets/images/gmaps_icon.svg";
 import Image from "next/image";
+import Link from "next/link";
+import {FaLink} from "react-icons/fa";
 
 const CorasManorMap = () => {
   return (
 
     <section id="coras-manor"
              className="relative z-30 mt-10 rounded-3xl border-4 border-[#AB8653] bg-[#FEF6E1] p-6 shadow-sm sm:p-8">
-      <h2 className="text-lg font-extrabold text-[#78350F]">Where to Celebrate</h2>
-      <div className="mt-4 flex flex-wrap gap-3">
+      <h2 className="text-lg font-extrabold text-[#78350F]">
+        Where to Celebrate
+      </h2>
+
+      <h3 className="mt-1 text-base font-semibold text-[#78350F]">
+        Coras Manor
+      </h3>
+
+      <p className="mt-2 text-sm leading-relaxed text-[#78350F]">
+        #1 Calamansi St., Brgy. Pias<br />
+        Mapandan, Pangasinan
+      </p>
+
+      <p className="mt-2 text-sm text-[#78350F]">
+        <span className="font-semibold">If you wish to stay at the resort overnight,</span>{" "}
+        room reservations may be made through the{" "}
+        <Link
+          href="https://corasmanorandgarden.com/rooms/"
+          className="inline-flex items-center gap-1 font-medium underline decoration-amber-400 decoration-2 underline-offset-2"
+        >
+          <FaLink className="text-xs" />
+          Coras Manor website
+        </Link>.
+      </p>
+
+      <div className="mt-8 flex flex-wrap gap-3">
         <a
           href="https://www.google.com/maps/dir/?api=1&destination=16.0322038,120.450968"
           target="_blank"
