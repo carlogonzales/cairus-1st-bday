@@ -86,15 +86,29 @@ const InvitationsPage = () => {
     });
   }, [invitations, rsvpByCode]);
 
-  const copyToClipboard = async (text, code) => {
+  const copyToClipboard = async (details, code) => {
     try {
-      await navigator.clipboard.writeText(text);
+      const message = `Hi ${details.name}! 👋
+
+You’re invited to celebrate Cairus’ birthday with us 🎉
+
+📅 Date: February 7
+📍 Location: Coras Manor, Mapandan, Pangasinan
+
+Please confirm attendance using the RSVP link below:
+👉 ${details.link}
+
+Feel free to include the number of adults and children who will be attending.
+We hope to celebrate with you! 💛
+
+More details on the link. See you there! 🎂`;
+      await navigator.clipboard.writeText(message);
       setCopiedCode(code);
       window.setTimeout(() => setCopiedCode(null), 1200);
     } catch (e) {
       try {
         const ta = document.createElement("textarea");
-        ta.value = text;
+        ta.value = details.link;
         ta.setAttribute("readonly", "");
         ta.style.position = "fixed";
         ta.style.left = "-9999px";
@@ -156,8 +170,8 @@ const InvitationsPage = () => {
         <div>
           <h1 className="text-xl font-extrabold text-slate-900">Invitations</h1>
           <p className="mt-1 text-sm text-slate-600">
-            Invitations come from <code className="rounded bg-slate-50 px-1.5 py-0.5">invitations.json</code>. RSVP
-            details come from <code className="rounded bg-slate-50 px-1.5 py-0.5">GET /api/rsvp</code>, matched by{" "}
+            Invitations come from <code className="rounded bg-slate-50 px-1.5 py-0.5">JSON File</code>. RSVP
+            details come from <code className="rounded bg-slate-50 px-1.5 py-0.5">RSVP API</code>, matched by{" "}
             <code className="rounded bg-slate-50 px-1.5 py-0.5">code</code>.
           </p>
         </div>
@@ -247,10 +261,14 @@ const InvitationsPage = () => {
                     <div className="flex items-center gap-2">
                       <button
                         type="button"
-                        onClick={() => copyToClipboard(row.link, row.code)}
+                        onClick={() =>
+                          copyToClipboard({
+                            link: row.link,
+                            name: row.name,
+                          }, row.code)}
                         className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-3 py-2 text-xs font-bold text-white hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-900/20"
                       >
-                        {copiedCode === row.code ? "Copied!" : "Copy link"}
+                        {copiedCode === row.code ? "Copied!" : "Copy Link w/ Message"}
                       </button>
 
                       <button
