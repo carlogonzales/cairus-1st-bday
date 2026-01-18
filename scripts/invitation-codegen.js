@@ -45,6 +45,7 @@ const names = [
   'Alvarico Family (Kuya Boyet)',
   'Alvarico Family (Kuya R\'Win)',
   'Gonzales Family (Tito Gore & Tita Grace)',
+  'Gonzales Family (Tito Rey & Tita Josephine)',
   'Monic\'s Family',
   'Marie Kris\'s Family',
   'Estrella Salafranca',
