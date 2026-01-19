@@ -81,7 +81,7 @@ const TravelToPangasinan = (props) => {
           href="https://www.google.com/maps?q=Pangasinan%2C%20Philippines"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-50 px-4 py-2.5 text-sm font-bold text-[#78350F] ring-emerald-600/20 hover:bg-emerald-100 focus:outline-none focus:ring-4"
+          className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#78350F] px-4 py-2.5 text-sm font-bold text-white ring-[#AB8653]/30 hover:bg-[#92400E] focus:outline-none focus:ring-4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
