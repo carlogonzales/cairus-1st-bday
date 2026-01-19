@@ -70,6 +70,9 @@ const names = [
   'Belen Mateo',
   'David Mateo',
   'Jesus Mateo',
+
+  // Misc.
+  'Photographers'
 ];
 
 const result = generateInvitations(names);
