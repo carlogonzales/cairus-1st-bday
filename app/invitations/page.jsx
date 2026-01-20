@@ -185,6 +185,13 @@ More details on the link. See you there! 🎂`;
             Responded:{" "}
             <span className="font-semibold text-slate-900">{rows.filter((r) => r.hasRsvp).length}</span>
           </div>
+          <div>
+            Attendee:{" "}
+            <span className="font-semibold text-slate-900">{rows.reduce((sum, r) => sum + (typeof r.children === 'number' ? r.children : 0) + (typeof r.adults === 'number' ? r.adults : 0), 0)}</span>
+            {" "}
+            <span className="text-gray-600">[{" "}{rows.reduce((sum, r) => sum + (typeof r.children === 'number' ? r.children : 0), 0)} children & {" "}
+            {rows.reduce((sum, r) => sum + (typeof r.adults === 'number' ? r.adults : 0), 0)} adults{" "}]</span>
+          </div>
           <div className="h-4 w-px bg-slate-200" />
           <div>
             {rsvpLoading ? (
