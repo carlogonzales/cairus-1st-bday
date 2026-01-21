@@ -36,6 +36,7 @@ function generateInvitations(names = []) {
 // ------------------------
 
 const names = [
+  'Birthday Celebrant\'s Family',
   // Carlo's Side
   'Chelsea Gonzales',
   'Gonzales Family (Angie & Narciso',
