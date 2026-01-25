@@ -72,6 +72,9 @@ const names = [
   'David Mateo',
   'Jesus Mateo',
   'Ka Willy',
+  'Irma Campos',
+  'Yolanda Lopez',
+  'Leilani Ventigan',
 
   // Misc.
   'Photographers'
