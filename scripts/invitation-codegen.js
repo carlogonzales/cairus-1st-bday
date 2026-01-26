@@ -56,6 +56,7 @@ const names = [
   'Erickson Salafranca',
   'Salafranca Family (Geoffrey & Yvana)',
   'Nestor Joven',
+  'Ilagan Family (Tita Babes and Manong)',
 
   //Joyse's Side
   'Dela Cruz Family (Federico & Grace)',
